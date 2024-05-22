@@ -13,7 +13,7 @@ def input_error (func):
     return inner
 
 @input_error
-def add_contact(args, contacts):
+def add_contact(args, contacts, phone):
     name, phone = args
     contacts[name] = phone
     return "Contact added." 
@@ -44,7 +44,7 @@ def show_all (args, contacts):
     all_name = []
     for name in contacts:
         all_name.append(contacts)
-        return all_name
+    return all_name
                 #END MY CODE
 def main():
     contacts = {}
