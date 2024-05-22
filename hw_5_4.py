@@ -7,7 +7,7 @@ def input_error (func):
     def inner(*args,**kwargs):
         try:
             return func(*args, **kwargs)
-        except (ValueError, KeyError, IndexError):
+        except (ValueError, KeyError, IndexError,TypeError):
             return "Enter the argument for the command"
         
     return inner
@@ -28,6 +28,7 @@ def change_contact(args, contacts, phone):
         contacts[name] = phone
         name.format(phone)
         return "Contact updated."
+    
     else:
         return "Contact does not find"
 # show contact by name
