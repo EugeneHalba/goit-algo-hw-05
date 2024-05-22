@@ -13,7 +13,7 @@ def input_error (func):
     return inner
 
 @input_error
-def add_contact(args, contacts, phone):
+def add_contact(args, contacts):
     name, phone = args
     contacts[name] = phone
     return "Contact added." 
@@ -22,7 +22,7 @@ def add_contact(args, contacts, phone):
 
 # change existing contact
 @input_error
-def change_contact(args, contacts):
+def change_contact(args, contacts, phone):
     name = args [0]
     if name in contacts:
         contacts[name] = phone
